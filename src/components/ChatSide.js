@@ -1,25 +1,24 @@
 import React, { useContext } from "react";
-import { fire, db } from "../services/firebase";
-import { globalContext } from "../components/globalContext";
+
+import ChatBar from "./ChatBar";
 
 function ChatSide(props) {
-  const { user } = useContext(globalContext).global;
-  const { chatRooms, setChatRooms } = props;
+  console.log("ChatSide");
 
-  if (chatRooms == null) {
-    db.collection("chat-rooms")
-      .where("members", "array-contains", user.email)
-      .get()
-      .then((querySnapshot) => {
-        let newChatRooms = {};
-        querySnapshot.forEach((doc) => {
-          newChatRooms[doc.id] = doc.data();
-        });
-        setChatRooms(newChatRooms);
-      });
-  }
+  const { chatRooms, setCurrentRoomId } = props;
 
-  return <div>Chat Side</div>;
+  const chatBars = chatRooms.map((room) => {
+    return (
+      <ChatBar key={room.id} info={room} setCurrentRoomId={setCurrentRoomId} />
+    );
+  });
+
+  return (
+    <div>
+      <h1>Chat Side</h1>
+      {chatBars}
+    </div>
+  );
 }
 
 export default ChatSide;

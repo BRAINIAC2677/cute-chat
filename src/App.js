@@ -15,9 +15,11 @@ function App() {
         const newGlobal = { ...prevGlobal, user };
         return newGlobal;
       });
-      console.log(user.email);
+      //console.log(user);
     });
-    return authChange;
+    return function cleanup() {
+      authChange();
+    };
   }, []);
 
   return (
