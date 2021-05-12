@@ -1,17 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { fire } from "./services/firebase";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
-import { userContext } from "./components/userContext";
+import { globalContext } from "./components/globalContext";
+import Chat from "./pages/Chat";
 
 function App() {
-  const context = useContext(userContext);
+  const context = useContext(globalContext);
+
+  useEffect(() => {
+    const authChange = fire.auth().onAuthStateChanged((user) => {
+      context.setGlobal((prevGlobal) => {
+        const newGlobal = { ...prevGlobal, user };
+        return newGlobal;
+      });
+      console.log(user.email);
+    });
+    return authChange;
+  }, []);
 
   return (
     <div>
       <Router>
         <Switch>
-          <Route path="/">{context.user ? <Logout /> : <Login />}</Route>
+          <Route path="/">{context.global.user ? <Chat /> : <Login />}</Route>
         </Switch>
       </Router>
     </div>

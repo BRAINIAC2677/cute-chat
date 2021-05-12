@@ -1,5 +1,5 @@
 import React from "react";
-import fire from "../services/firebase";
+import { fire } from "../services/firebase";
 
 function Logout() {
   function handleLogout() {

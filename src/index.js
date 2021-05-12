@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { UserContextProvider } from "./components/userContext";
+import { GlobalContextProvider } from "./components/globalContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserContextProvider>
+    <GlobalContextProvider>
       <App />
-    </UserContextProvider>
+    </GlobalContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

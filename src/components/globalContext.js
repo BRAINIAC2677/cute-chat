@@ -1,0 +1,14 @@
+import React, { useState } from "react";
+const globalContext = React.createContext();
+
+function GlobalContextProvider(props) {
+  const [global, setGlobal] = useState({ user: null });
+
+  return (
+    <globalContext.Provider value={{ global, setGlobal }}>
+      {props.children}
+    </globalContext.Provider>
+  );
+}
+
+export { GlobalContextProvider, globalContext };
