@@ -1,16 +1,15 @@
 import React, { useContext } from "react";
-
 import ChatBar from "./ChatBar";
+import { globalContext } from "./globalContext";
 
-function ChatSide(props) {
+function ChatSide() {
   console.log("ChatSide");
 
-  const { chatRooms, setCurrentRoomId } = props;
+  const { global, setGlobal } = useContext(globalContext);
+  const { chatRooms, setCurrentRoomId } = global;
 
   const chatBars = chatRooms.map((room) => {
-    return (
-      <ChatBar key={room.id} info={room} setCurrentRoomId={setCurrentRoomId} />
-    );
+    return <ChatBar key={room.roomId} info={room} />;
   });
 
   return (

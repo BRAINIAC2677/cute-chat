@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { globalContext } from "./globalContext";
 
 function ChatBar(props) {
-  const { room_name, id } = props.info;
+  const { global, setGlobal } = useContext(globalContext);
+  const { chatRooms } = global;
+  const { room_name, roomId } = props.info;
 
   function handleClick() {
-    props.setCurrentRoomId(id);
+    const currentRoomInd = chatRooms.findIndex(
+      (room) => room.roomId === roomId
+    );
+    setGlobal((prevGlobal) => {
+      return { ...prevGlobal, currentRoomId: roomId, currentRoomInd };
+    });
   }
   return <button onClick={handleClick}>{room_name}</button>;
 }

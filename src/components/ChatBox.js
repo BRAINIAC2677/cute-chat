@@ -1,24 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import BlankRoom from "./BlankRoom";
 import Text from "./Text";
+import { globalContext } from "./globalContext";
+import WriteText from "./WriteText";
 
-function ChatBox(props) {
+function ChatBox() {
   console.log("ChatBox");
 
-  const { chatRooms, currentRoomId } = props;
+  const { global, setGlobal } = useContext(globalContext);
+  const { chatRooms, currentRoomInd } = global;
 
-  const currentRoomInd = chatRooms.findIndex(
-    (room) => room.id === currentRoomId
-  );
+  console.log(chatRooms);
 
   return (
     <div>
-      {currentRoomInd === -1 ? (
+      {currentRoomInd === null ? (
         <BlankRoom />
       ) : (
-        chatRooms[currentRoomInd].texts.map((text) => {
-          return <Text key={text.id} info={text} />;
-        })
+        <>
+          {chatRooms[currentRoomInd].texts.map((text) => {
+            return <Text key={text.id} info={text} />;
+          })}
+          <WriteText />
+        </>
       )}
     </div>
   );

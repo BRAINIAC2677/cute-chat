@@ -7,9 +7,8 @@ import ChatBox from "../components/ChatBox";
 function Chat() {
   console.log("Chat");
 
-  const [chatRooms, setChatRooms] = useState(null);
-  const [currentRoomId, setCurrentRoomId] = useState("NpzaZuwims0amaGS8SF7");
-  const { user } = useContext(globalContext).global;
+  const { global, setGlobal } = useContext(globalContext);
+  const { user, chatRooms } = global;
 
   useEffect(() => {
     const dbListener = db
@@ -18,9 +17,14 @@ function Chat() {
       .onSnapshot((snapShot) => {
         let newChatRooms = [];
         snapShot.forEach((doc) => {
-          newChatRooms.push({ id: doc.id, ...doc.data() });
+          newChatRooms.push({ roomId: doc.id, ...doc.data() });
         });
-        setChatRooms(newChatRooms);
+
+        console.log(`newChatRooms ${newChatRooms}`);
+
+        setGlobal((prevGlobal) => {
+          return { ...prevGlobal, chatRooms: newChatRooms };
+        });
 
         snapShot.docChanges().forEach((change) => {
           console.log(change);
@@ -41,8 +45,8 @@ function Chat() {
       ) : (
         <React.Fragment>
           <h1>Chat</h1>
-          <ChatSide chatRooms={chatRooms} setCurrentRoomId={setCurrentRoomId} />
-          <ChatBox chatRooms={chatRooms} currentRoomId={currentRoomId} />
+          <ChatSide />
+          <ChatBox />
         </React.Fragment>
       )}
     </div>
