@@ -1,10 +1,14 @@
 import React, { useContext } from "react";
 import { fire, db } from "../services/firebase";
 import { globalContext } from "./globalContext";
+import useRoomIndex from "../helper/useRoomIndex";
 
 function Text(props) {
+  console.log("Text component");
+
   const { global, setGlobal } = useContext(globalContext);
-  const { chatRooms, currentRoomInd, currentRoomId } = global;
+  const { chatRooms, currentRoomId } = global;
+  const currentRoomInd = useRoomIndex(currentRoomId);
   const { id, body, time, author } = props.info;
 
   function handleDelete() {
@@ -12,7 +16,7 @@ function Text(props) {
       return text.id != id;
     });
 
-    db.collection("chat_rooms")
+    db.collection("cute_rooms")
       .doc(currentRoomId)
       .update({ texts: updTexts })
       .then(() => console.log("success writing"))

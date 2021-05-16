@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { globalContext } from "./globalContext";
 
 function BlankRoom() {
-  const { user } = useContext(globalContext).global;
-  return <div>{`Welcome ${user.displayName}`}</div>;
+  const { global, setGlobal } = useContext(globalContext);
+  const { user } = global;
+  return <React.Fragment>{`Welcome ${user.displayName}`}</React.Fragment>;
 }
 
 export default BlankRoom;

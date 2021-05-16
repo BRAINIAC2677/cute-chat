@@ -4,6 +4,8 @@ import uiConfig from "../services/firebaseui";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 function Login() {
+  console.log("Login Component.");
+
   return (
     <div>
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={fire.auth()} />

@@ -3,13 +3,13 @@ import ChatBar from "./ChatBar";
 import { globalContext } from "./globalContext";
 
 function ChatSide() {
-  console.log("ChatSide");
+  console.log("ChatSide component.");
 
   const { global, setGlobal } = useContext(globalContext);
-  const { chatRooms, setCurrentRoomId } = global;
+  const { chatRooms } = global;
 
   const chatBars = chatRooms.map((room) => {
-    return <ChatBar key={room.roomId} info={room} />;
+    return <ChatBar key={room.room_id} info={room} />;
   });
 
   return (

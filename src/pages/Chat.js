@@ -1,35 +1,30 @@
 import React, { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { fire, db } from "../services/firebase";
 import { globalContext } from "../components/globalContext";
 import ChatSide from "../components/ChatSide";
 import ChatBox from "../components/ChatBox";
+import Logout from "../components/Logout";
+import Search from "../components/Search";
 
 function Chat() {
-  console.log("Chat");
+  console.log("Chat Component");
 
   const { global, setGlobal } = useContext(globalContext);
   const { user, chatRooms } = global;
 
   useEffect(() => {
     const dbListener = db
-      .collection("chat_rooms")
+      .collection("cute_rooms")
       .where("members", "array-contains", user.email)
       .onSnapshot((snapShot) => {
         let newChatRooms = [];
         snapShot.forEach((doc) => {
-          newChatRooms.push({ roomId: doc.id, ...doc.data() });
+          newChatRooms.push({ room_id: doc.id, ...doc.data() });
         });
-
-        console.log(`newChatRooms ${newChatRooms}`);
 
         setGlobal((prevGlobal) => {
           return { ...prevGlobal, chatRooms: newChatRooms };
-        });
-
-        snapShot.docChanges().forEach((change) => {
-          console.log(change);
-          console.log(change.type);
-          console.log(change.doc.data());
         });
       });
 
@@ -47,6 +42,8 @@ function Chat() {
           <h1>Chat</h1>
           <ChatSide />
           <ChatBox />
+          <Logout />
+          <Search />
         </React.Fragment>
       )}
     </div>

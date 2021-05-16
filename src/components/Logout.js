@@ -2,6 +2,8 @@ import React from "react";
 import { fire } from "../services/firebase";
 
 function Logout() {
+  console.log("Logout Component.");
+
   function handleLogout() {
     fire.auth().signOut();
   }

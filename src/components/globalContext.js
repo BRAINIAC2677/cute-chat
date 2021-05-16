@@ -6,7 +6,6 @@ function GlobalContextProvider(props) {
     user: null,
     chatRooms: null,
     currentRoomId: null,
-    currentRoomInd: null,
   });
 
   return (
