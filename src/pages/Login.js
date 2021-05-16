@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { fire } from "../services/firebase";
 import uiConfig from "../services/firebaseui";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 function Login() {
   console.log("Login Component.");

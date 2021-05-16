@@ -1,14 +1,13 @@
 import React from "react";
-import firebase from "firebase";
 import TextField from "@material-ui/core/TextField";
-import { fire, db } from "../services/firebase";
+import { db } from "../services/firebase";
 import { globalContext } from "./globalContext";
-import useRoomIndex from "../helper/useRoomIndex";
+import useRoomIndex from "../custom_hooks/useRoomIndex";
 
-function WriteText() {
-  console.log("WriteText Component");
+function ComposeChatText() {
+  console.log("ComposeChatText Component");
 
-  const { global, setGlobal } = React.useContext(globalContext);
+  const { global } = React.useContext(globalContext);
   const { chatRooms, currentRoomId, user } = global;
   const currentRoomInd = useRoomIndex(currentRoomId);
 
@@ -54,4 +53,4 @@ function WriteText() {
   );
 }
 
-export default WriteText;
+export default ComposeChatText;

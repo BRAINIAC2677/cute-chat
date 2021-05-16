@@ -1,19 +1,19 @@
 import React, { useContext } from "react";
-import { fire, db } from "../services/firebase";
+import { db } from "../services/firebase";
 import { globalContext } from "./globalContext";
-import useRoomIndex from "../helper/useRoomIndex";
+import useRoomIndex from "../custom_hooks/useRoomIndex";
 
 function Text(props) {
   console.log("Text component");
 
-  const { global, setGlobal } = useContext(globalContext);
+  const { global } = useContext(globalContext);
   const { chatRooms, currentRoomId } = global;
   const currentRoomInd = useRoomIndex(currentRoomId);
   const { id, body, time, author } = props.info;
 
   function handleDelete() {
     let updTexts = chatRooms[currentRoomInd].texts.filter((text) => {
-      return text.id != id;
+      return text.id !== id;
     });
 
     db.collection("cute_rooms")

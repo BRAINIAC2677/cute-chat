@@ -1,9 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { globalContext } from "./components/globalContext";
 import { fire, db } from "./services/firebase";
 import Login from "./pages/Login";
-import Logout from "./components/Logout";
-import { globalContext } from "./components/globalContext";
 import Chat from "./pages/Chat";
 
 function App() {

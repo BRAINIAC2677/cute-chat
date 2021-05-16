@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
-import { fire, db } from "../services/firebase";
-import UserBarDm from "./UserBarDm";
+import { db } from "../services/firebase";
+import SearchResult from "./SearchResult";
 
 function Search() {
   console.log("Search Component");
@@ -23,7 +23,7 @@ function Search() {
           let tempUserBars = [];
 
           snapShot.forEach((doc) => {
-            tempUserBars.push(<UserBarDm key={doc.id} info={doc.data()} />);
+            tempUserBars.push(<SearchResult key={doc.id} info={doc.data()} />);
           });
           setUserBar(tempUserBars);
           setInpVal("");

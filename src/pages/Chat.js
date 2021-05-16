@@ -1,8 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { fire, db } from "../services/firebase";
+import React, { useContext, useEffect } from "react";
 import { globalContext } from "../components/globalContext";
-import ChatSide from "../components/ChatSide";
+import { db } from "../services/firebase";
+import ChatSideBar from "../components/ChatSideBar";
 import ChatBox from "../components/ChatBox";
 import Logout from "../components/Logout";
 import Search from "../components/Search";
@@ -40,7 +39,7 @@ function Chat() {
       ) : (
         <React.Fragment>
           <h1>Chat</h1>
-          <ChatSide />
+          <ChatSideBar />
           <ChatBox />
           <Logout />
           <Search />

@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { globalContext } from "./globalContext";
 
-function ChatBar(props) {
-  console.log("ChatBar Component");
+function ChatHead(props) {
+  console.log("ChatHead Component");
 
   const { global, setGlobal } = useContext(globalContext);
-  const { chatRooms, user } = global;
+  const { user } = global;
   const { room_name, room_id } = props.info;
   let name = room_name[0] === user.displayName ? room_name[1] : room_name[0];
 
@@ -17,4 +17,4 @@ function ChatBar(props) {
   return <button onClick={() => handleClick()}>{name}</button>;
 }
 
-export default ChatBar;
+export default ChatHead;

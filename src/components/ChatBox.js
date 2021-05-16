@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import BlankRoom from "./BlankRoom";
-import Text from "./Text";
 import { globalContext } from "./globalContext";
-import WriteText from "./WriteText";
-import useRoomIndex from "../helper/useRoomIndex";
+import useRoomIndex from "../custom_hooks/useRoomIndex";
+import BlankRoom from "./BlankRoom";
+import ChatText from "./ChatText";
+import ComposeChatText from "./ComposeChatText";
 
 function ChatBox() {
   console.log("ChatBox component");
 
-  const { global, setGlobal } = useContext(globalContext);
+  const { global } = useContext(globalContext);
   const { chatRooms, currentRoomId } = global;
   const currentRoomInd = useRoomIndex(currentRoomId);
 
@@ -19,9 +19,9 @@ function ChatBox() {
       ) : (
         <>
           {chatRooms[currentRoomInd].texts.map((text) => {
-            return <Text key={text.id} info={text} />;
+            return <ChatText key={text.id} info={text} />;
           })}
-          <WriteText />
+          <ComposeChatText />
         </>
       )}
     </div>

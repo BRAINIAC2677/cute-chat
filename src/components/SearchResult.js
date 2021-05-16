@@ -1,19 +1,20 @@
 import React, { useContext } from "react";
 import { globalContext } from "./globalContext";
-import { fire, db } from "../services/firebase";
+import { db } from "../services/firebase";
 
-function UserBar(props) {
-  console.log("UserBarDm component.");
+function SearchResult(props) {
+  console.log("SearchResult component.");
 
   const { global, setGlobal } = useContext(globalContext);
   const { chatRooms, user } = global;
   const { name, email, imgUrl } = props.info;
 
   async function handleClick() {
-    console.log("ChatBar from searches Click");
+    console.log("Search Result from searches Click");
 
     if (email === user.email) {
       console.log("This is You!");
+      return;
     }
 
     let currentRoomInd = chatRooms.findIndex((room) => {
@@ -52,7 +53,8 @@ function UserBar(props) {
       });
     }
   }
+
   return <button onClick={() => handleClick()}>{name}</button>;
 }
 
-export default UserBar;
+export default SearchResult;
