@@ -323,10 +323,6 @@ input:focus {
     --border-radius: 10px;
   }
 
-  .chat-box {
-    --chat-texts-height: 320px;
-  }
-
   .avatar {
     --diameter: 30px;
   }
@@ -350,12 +346,12 @@ input:focus {
   }
 
   .search input {
-    --width: 90px;
+    --width: 110px;
     font-size: var(--font-size-2);
   }
 
   .compose-text input {
-    --width: 120px;
+    --width: 160px;
     font-size: var(--font-size-2);
     padding: var(--spacing-3);
   }
@@ -365,6 +361,6 @@ input:focus {
   }
 
   .chat-box {
-    grid-template-rows: 30px var(--chat-texts-height) 55px;
+    grid-template-rows: 30px 340px 45px;
   }
 }
