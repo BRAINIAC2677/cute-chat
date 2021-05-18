@@ -11,7 +11,9 @@ function BlankRoom() {
 
   return (
     <div className="blank-room">
-      <p>{`Welcome To CuteChat ${user.displayName}`}</p>
+      <p
+        style={{ color: "var(--accent-col-2)" }}
+      >{`Welcome To CuteChat ${user.displayName}`}</p>
       <div className="faded-icon">
         <FontAwesomeIcon icon={faHandshake} />
       </div>

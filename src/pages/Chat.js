@@ -54,10 +54,22 @@ function Chat() {
     };
   }, []);
 
+  const loadingStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100vw",
+    height: "100vh",
+    fontSize: "1.5rem",
+    backgroundColor: "var(--primary-col)",
+  };
+
   return (
     <React.Fragment>
       {chatRooms === null ? (
-        <div>Loading...</div>
+        <div style={loadingStyle}>
+          <p>Loading. . .</p>
+        </div>
       ) : (
         <div className="chat-container">
           <ChatHeader />

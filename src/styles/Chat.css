@@ -1,42 +1,37 @@
-:root {
-  --v1: 8px;
-  --h1: 8px;
-  --v2: -8px;
-  --h2: -8px;
-  --br: 8px;
+/* =============================================
+          general classes
+  ============================================== */
 
-  --primary-col: hsl(224, 88%, 93%);
-  --light-shadow: hsl(221, 51%, 100%);
-  --dark-shadow: hsl(221, 51%, 78%);
-  --accent-col-1: black;
-
-  --spacing-1: 1.5rem;
-  --spacing-2: 1rem;
-  --spacing-3: 0.5rem;
-
-  --font-size-1: 2rem;
-  --font-size-2: 1rem;
-  --font-size-3: 0.7rem;
-
-  --border-radius: 10px;
+input:focus {
+  outline: none;
 }
 
-.elevated {
-  background-color: var(--primary-col);
-  border: 0;
-  border-radius: var(--border-radius);
-  box-shadow: var(--h1) var(--v1) var(--br) var(--dark-shadow),
-    var(--h2) var(--v2) var(--br) var(--light-shadow);
+.avatar {
+  --diameter: 40px;
 }
 
-.pressed {
-  background-color: var(--primary-col);
-  border: 0;
-  border-radius: var(--border-radius);
-  box-shadow: inset var(--h1) var(--v1) var(--br) var(--dark-shadow),
-    inset var(--h2) var(--v2) var(--br) var(--light-shadow);
+.avatar {
+  border-radius: 50%;
+  height: var(--diameter);
+  object-fit: contain;
+  width: var(--diameter);
 }
 
+.rounded-btn {
+  --icon-size: 1.5rem;
+}
+
+.rounded-btn {
+  border-radius: 50%;
+  color: var(--accent-col-2);
+  cursor: pointer;
+  font-size: var(--icon-size);
+  padding: var(--spacing-3);
+}
+
+/* ==========================================
+        component specific classes
+  ========================================== */
 .chat-container {
   background-color: var(--primary-col);
   color: var(--accent-col-1);
@@ -46,23 +41,23 @@
   grid-template: 10vh 1fr 8vh / 20vw 1fr;
   grid-gap: calc(2 * var(--spacing-2));
   grid-template-areas:
-    " header  header "
-    " sidebar box "
-    " sidebar box ";
+    " header   header "
+    " sidebar  box    "
+    " sidebar  box    ";
   width: 100vw;
 }
 
 .chat-header {
-  grid-area: header;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
+  display: flex;
+  grid-area: header;
+  justify-content: space-around;
 }
 
 .chat-sidebar {
+  grid-area: sidebar;
   overflow-y: auto;
   padding: var(--spacing-2);
-  grid-area: sidebar;
 }
 
 .chat-box {
@@ -70,31 +65,21 @@
 }
 
 .chat-box {
-  grid-area: box;
   display: grid;
+  grid-area: box;
   grid-template-rows: 1fr var(--chat-texts-height) 2fr;
   padding: var(--spacing-2);
 }
 
 .chat-head,
 .search-result {
+  align-items: center;
   cursor: pointer;
+  font-weight: bold;
+  display: flex;
   margin: var(--spacing-2) 0rem;
   padding: var(--spacing-3) var(--spacing-2);
-  display: flex;
-  align-items: center;
   width: 100%;
-}
-
-.avatar {
-  --diameter: 40px;
-}
-
-.avatar {
-  width: var(--diameter);
-  height: var(--diameter);
-  border-radius: 50%;
-  object-fit: contain;
 }
 
 .chat-head p,
@@ -104,6 +89,8 @@
 }
 
 .inbox-header {
+  color: var(--accent-col-2);
+  font-weight: bold;
   margin: 0;
   display: flex;
 }
@@ -111,9 +98,7 @@
 .chat-texts {
   display: flex;
   flex-direction: column;
-  overflow: auto;
-
-  /*  width: 100%; */
+  overflow-y: auto;
 }
 
 .chat-text {
@@ -126,8 +111,8 @@
 }
 
 .chat-text img {
-  width: var(--diameter);
   height: var(--diameter);
+  width: var(--diameter);
 }
 
 .chat-text-content {
@@ -154,62 +139,33 @@
 }
 
 .compose-text {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
-  padding: var(--spacing-2);
-}
-
-.rounded-btn {
-  --icon-size: 1rem;
-}
-
-.rounded-btn {
-  font-size: var(--icon-size);
-  padding: var(--spacing-3);
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.compose-text input {
-  font-size: var(--font-size-2);
-  padding: var(--spacing-2);
-  margin-right: var(--spacing-2);
-}
-
-input:focus {
-  outline: none;
-}
-
-.search input {
-  --width: 200px;
-}
-
-.search input {
-  width: var(--width);
 }
 
 .compose-text input {
   --width: 300px;
 }
-
 .compose-text input {
+  font-size: var(--font-size-2);
+  padding: var(--spacing-2);
+  margin-right: var(--spacing-2);
   width: var(--width);
 }
 
-.search input {
-  font-size: var(--font-size-2);
-  padding: var(--spacing-3);
-  margin-right: var(--spacing-2);
-}
-
 .logout {
+  color: var(--accent-col-2);
   cursor: pointer;
+  font-weight: bold;
   padding: var(--spacing-3) var(--spacing-1);
 }
 
 .search {
   --width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search {
@@ -217,33 +173,43 @@ input:focus {
   background-color: var(--primary-col);
   width: var(--width);
   text-align: center;
-  padding: var(--spacing-2);
   z-index: 2;
+}
+
+.search input {
+  --width: 200px;
+}
+
+.search input {
+  font-size: var(--font-size-2);
+  margin-right: var(--spacing-2);
+  padding: var(--spacing-3);
+  width: var(--width);
 }
 
 .search-results {
   --mx-height: 300px;
-  --height: 66px;
+  --height-from-top: 66px;
 }
 
 .search-results {
   background-color: var(--primary-col);
-  padding: var(--spacing-2);
-  position: absolute;
-  top: var(--height);
   left: 0;
-  width: var(--width);
   max-height: var(--mx-height);
   overflow-y: auto;
+  padding: var(--spacing-2);
+  position: absolute;
+  top: var(--height-from-top);
+  width: var(--width);
 }
 
 .greyout {
-  position: absolute;
-  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
   bottom: 0;
   left: 0;
+  position: absolute;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
 }
 
 .chat-footer {
@@ -251,28 +217,23 @@ input:focus {
 }
 
 .blank-room {
+  font-weight: bolder;
+  grid-row: 2;
   text-align: center;
   font-size: var(--font-size-1);
 }
 
 .faded-icon {
+  color: var(--accent-col-2);
+  font-size: calc(2 * var(--font-size-1));
   opacity: 0.2;
 }
 
-/* media queries */
+/*==============================
+        media queries
+ =============================== */
+
 @media (max-width: 1024px) {
-  /*   :root {
-    --spacing-1: 1.5rem;
-    --spacing-2: 1rem;
-    --spacing-3: 0.5rem;
-
-    --font-size-1: 2rem;
-    --font-size-2: 1rem;
-    --font-size-3: 0.7rem;
-
-    --border-radius: 10px;
-  } */
-
   .chat-box {
     --chat-texts-height: 250px;
   }
@@ -281,35 +242,22 @@ input:focus {
     --diameter: 30px;
   }
 
-  /*   .chat-text img {
-    --diameter: 20px;
-  } */
-
   .chat-text-body {
     --mx-width: 500px;
   }
 
-  /*   .search {
-    --width: 300px;
-  }
-  
-  .search-results {
-    --height: 66px;
-    --mx-height: 300px;
-  } */
-
   .chat-container {
-    position: relative;
     grid-template-areas:
-      "header header"
-      "focus focus"
-      "footer footer";
+      " header  header "
+      " focus   focus  "
+      " footer  footer ";
+    position: relative;
   }
 
   .chat-footer {
+    align-items: center;
     display: flex;
     grid-area: footer;
-    align-items: center;
     justify-content: center;
   }
 }
@@ -328,7 +276,7 @@ input:focus {
   }
 
   .chat-box {
-    --chat-texts-height: 500px;
+    --chat-texts-height: 280px;
   }
 
   .avatar {
@@ -340,7 +288,7 @@ input:focus {
   }
 
   .chat-text-body {
-    --mx-width: 500px;
+    --mx-width: 300px;
   }
 
   .search {
@@ -348,12 +296,13 @@ input:focus {
   }
 
   .search-results {
-    --height: 66px;
+    --height-from-top: 66px;
     --mx-height: 300px;
   }
 
   .search input {
     --width: 200px;
+    font-size: var(--font-size-2);
   }
 
   .compose-text input {
@@ -368,22 +317,22 @@ input:focus {
     --spacing-3: 0.4rem;
 
     --font-size-1: 1.5rem;
-    --font-size-2: 0.8rem;
+    --font-size-2: 1rem;
     --font-size-3: 0.5rem;
 
     --border-radius: 10px;
   }
 
   .chat-box {
-    --chat-texts-height: 290px;
+    --chat-texts-height: 320px;
   }
 
   .avatar {
-    --diameter: 20px;
+    --diameter: 30px;
   }
 
   .chat-text img {
-    --diameter: 10px;
+    --diameter: 20px;
   }
 
   .chat-text-body {
@@ -396,22 +345,26 @@ input:focus {
   }
 
   .search-results {
-    --height: 50px;
+    --height-from-top: 50px;
     --mx-height: 300px;
   }
 
   .search input {
-    --width: 70px;
-    font-size: var(--font-size-3);
+    --width: 90px;
+    font-size: var(--font-size-2);
   }
 
   .compose-text input {
-    --width: 100px;
-    font-size: var(--font-size-3);
+    --width: 120px;
+    font-size: var(--font-size-2);
     padding: var(--spacing-3);
   }
 
   .rounded-btn {
-    --icon-size: 0.5rem;
+    --icon-size: 0.9rem;
+  }
+
+  .chat-box {
+    grid-template-rows: 30px var(--chat-texts-height) 55px;
   }
 }

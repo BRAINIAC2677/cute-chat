@@ -16,7 +16,7 @@ function InboxHeader() {
 
   return (
     <div className="inbox-header">
-      <img className="avatar" src={imgUrl} alt="avatar" />
+      <img className="avatar elevated" src={imgUrl} alt="avatar" />
       <p>{name}</p>
     </div>
   );

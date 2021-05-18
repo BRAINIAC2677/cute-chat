@@ -9,7 +9,7 @@ function ChatHeader() {
 
   return (
     <div className="chat-header elevated">
-      <img className="avatar" src={user.photoURL} alt="avatar" />
+      <img className="avatar elevated" src={user.photoURL} alt="avatar" />
       <Search />
       <Logout />
     </div>

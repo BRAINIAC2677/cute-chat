@@ -1,5 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+/* ======================================
+        custom global variables
+  ======================================= */
+
+:root {
+  --v1: 8px;
+  --h1: 8px;
+  --v2: -8px;
+  --h2: -8px;
+  --br: 8px;
+
+  --primary-col: hsl(225, 90%, 93%);
+  --light-shadow: hsl(225, 90%, 100%);
+  --dark-shadow: hsl(225, 90%, 78%);
+  --accent-col-1: black;
+  --accent-col-2: #00cecb;
+
+  --spacing-1: 1.5rem;
+  --spacing-2: 1rem;
+  --spacing-3: 0.5rem;
+
+  --font-size-1: 2rem;
+  --font-size-2: 1rem;
+  --font-size-3: 0.7rem;
+
+  --border-radius: 10px;
+}
+
+/* =============================================
+          general classes
+  ============================================== */
+
+.elevated {
+  background-color: var(--primary-col);
+  border: 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--h1) var(--v1) var(--br) var(--dark-shadow),
+    var(--h2) var(--v2) var(--br) var(--light-shadow);
+}
+
+.pressed {
+  background-color: var(--primary-col);
+  border: 0;
+  border-radius: var(--border-radius);
+  box-shadow: inset var(--h1) var(--v1) var(--br) var(--dark-shadow),
+    inset var(--h2) var(--v2) var(--br) var(--light-shadow);
 }

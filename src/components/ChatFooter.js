@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { styleContext } from "./styleContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faParachuteBox } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCommentDots,
+  faUserFriends,
+} from "@fortawesome/free-solid-svg-icons";
 
 function ChatFooter() {
   const { myStyle, setMyStyle } = useContext(styleContext);
@@ -17,7 +20,7 @@ function ChatFooter() {
   return (
     <div className="chat-footer elevated">
       <button className="elevated rounded-btn" onClick={handleClick}>
-        <FontAwesomeIcon icon={focused === 0 ? faCoffee : faParachuteBox} />
+        <FontAwesomeIcon icon={focused === 0 ? faUserFriends : faCommentDots} />
       </button>
     </div>
   );

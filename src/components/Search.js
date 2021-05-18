@@ -44,6 +44,7 @@ function Search() {
       <input
         className="pressed"
         value={inpVal}
+        placeholder="ex. Asif Azad"
         onChange={(event) => handleChange(event)}
       />
       <button className="rounded-btn elevated" onClick={handleSearch}>
@@ -53,7 +54,7 @@ function Search() {
         className="search-results"
         style={searchIsOn ? { display: "block" } : { display: "none" }}
       >
-        {userBar}
+        {userBar.length === 0 ? <div>No Matched Result</div> : userBar}
       </div>
     </div>
   );

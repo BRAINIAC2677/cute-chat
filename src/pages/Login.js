@@ -9,11 +9,12 @@ function Login() {
 
   return (
     <div className="container">
-      <div className="login-container">
-        <p className="item">Login</p>
+      <div className="login-container elevated">
+        <p className="item title">Login</p>
         <div className="item">
           <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={fire.auth()} />
         </div>
+        <p className="item dev">Developed By: Asif Azad</p>
       </div>
     </div>
   );

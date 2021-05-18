@@ -4,7 +4,7 @@ import { styleContext } from "./styleContext";
 function GreyOut() {
   const { myStyle } = useContext(styleContext);
   const { searchIsOn } = myStyle;
-  console.log(`SearchIsOn: ${searchIsOn}`);
+
   return (
     <div
       className="greyout"

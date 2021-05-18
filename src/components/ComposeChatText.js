@@ -46,7 +46,7 @@ function ComposeChatText() {
     <div className="compose-text">
       <input
         className="pressed"
-        placeholder="Write"
+        placeholder="You are awesome"
         value={inpVal}
         onChange={(event) => handleChange(event)}
       />
