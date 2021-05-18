@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/cute-chat/static/css/main.9af13cb5.chunk.css",
+    "main.css": "/cute-chat/static/css/main.0631fd0e.chunk.css",
     "main.js": "/cute-chat/static/js/main.ca28f43f.chunk.js",
     "main.js.map": "/cute-chat/static/js/main.ca28f43f.chunk.js.map",
     "runtime-main.js": "/cute-chat/static/js/runtime-main.551bb6b6.js",
@@ -8,13 +8,13 @@
     "static/js/2.c3196fe6.chunk.js": "/cute-chat/static/js/2.c3196fe6.chunk.js",
     "static/js/2.c3196fe6.chunk.js.map": "/cute-chat/static/js/2.c3196fe6.chunk.js.map",
     "index.html": "/cute-chat/index.html",
-    "static/css/main.9af13cb5.chunk.css.map": "/cute-chat/static/css/main.9af13cb5.chunk.css.map",
+    "static/css/main.0631fd0e.chunk.css.map": "/cute-chat/static/css/main.0631fd0e.chunk.css.map",
     "static/js/2.c3196fe6.chunk.js.LICENSE.txt": "/cute-chat/static/js/2.c3196fe6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.551bb6b6.js",
     "static/js/2.c3196fe6.chunk.js",
-    "static/css/main.9af13cb5.chunk.css",
+    "static/css/main.0631fd0e.chunk.css",
     "static/js/main.ca28f43f.chunk.js"
   ]
 }
