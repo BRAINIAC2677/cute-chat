@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function Search() {
-  console.log("Search Component");
+  /* console.log("Search Component"); */
 
   const { myStyle, setMyStyle } = useContext(styleContext);
   const { searchIsOn } = myStyle;
@@ -17,10 +17,10 @@ function Search() {
   }
 
   function handleSearch() {
-    console.log("handleSearch clicked.");
+    /* console.log("handleSearch clicked."); */
 
     if (inpVal) {
-      console.log(`after setMyStyle: ${myStyle}`);
+      /* console.log(`after setMyStyle: ${myStyle}`); */
       db.collection("cute_users")
         .where("name", "==", inpVal.trim())
         .get()

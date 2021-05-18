@@ -4,7 +4,7 @@ import { styleContext } from "./styleContext";
 import { db } from "../services/firebase";
 
 function SearchResult(props) {
-  console.log("SearchResult component.");
+  /* console.log("SearchResult component."); */
 
   const { global, setGlobal } = useContext(globalContext);
   const { setMyStyle } = useContext(styleContext);
@@ -12,7 +12,7 @@ function SearchResult(props) {
   const { name, email, imgUrl } = props.info;
 
   async function handleClick() {
-    console.log("Search Result from searches Click");
+    /* console.log("Search Result from searches Click"); */
 
     if (email === user.email) {
       console.log("This is You!");
@@ -32,7 +32,7 @@ function SearchResult(props) {
       const newRoom = { room_name, members, imgUrls, texts: [] };
       const docRef = await db.collection("cute_rooms").add(newRoom);
 
-      console.log(`${docRef.id} successfully room added.`);
+      /* console.log(`${docRef.id} successfully room added.`); */
 
       const updChatRooms = await db
         .collection("cute_rooms")

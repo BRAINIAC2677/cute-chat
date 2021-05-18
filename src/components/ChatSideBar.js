@@ -4,7 +4,7 @@ import { globalContext } from "./globalContext";
 import { styleContext } from "./styleContext";
 
 function ChatSideBar() {
-  console.log("ChatSideBar component.");
+  /* console.log("ChatSideBar component."); */
 
   const { global } = useContext(globalContext);
   const { myStyle } = useContext(styleContext);
@@ -27,8 +27,6 @@ function ChatSideBar() {
   const hiddenStyle = {
     display: "none",
   };
-
-  console.log(`focused in sidebar: ${focused}`);
 
   return (
     <div

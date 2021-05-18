@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandshake } from "@fortawesome/free-solid-svg-icons";
 
 function BlankRoom() {
-  console.log("BlankRoom Component.");
+  /* console.log("BlankRoom Component."); */
 
   const { global } = useContext(globalContext);
   const { user } = global;

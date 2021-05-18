@@ -7,14 +7,14 @@ import Chat from "./pages/Chat";
 import { StyleContextProvider } from "./components/styleContext";
 
 function App() {
-  console.log("App component");
+  /* console.log("App component"); */
 
   const { global, setGlobal } = useContext(globalContext);
   const { user } = global;
 
   useEffect(() => {
     const authChange = fire.auth().onAuthStateChanged((user) => {
-      console.log(`Auth Changed. User: ${user}`);
+      /* console.log(`Auth Changed. User: ${user}`); */
 
       user === null
         ? setGlobal((prevGlobal) => {

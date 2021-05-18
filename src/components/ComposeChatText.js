@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 function ComposeChatText() {
-  console.log("ComposeChatText Component");
+  /* console.log("ComposeChatText Component"); */
 
   const { global } = React.useContext(globalContext);
   const { chatRooms, currentRoomId, user } = global;

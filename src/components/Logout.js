@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 function Logout() {
-  console.log("Logout Component.");
+  /* console.log("Logout Component."); */
 
   const { width } = useWindowDimensions();
 

@@ -4,7 +4,7 @@ import { styleContext } from "./styleContext";
 import useWindowsDimensions from "../custom_hooks/useWindowDimensions";
 
 function ChatHead(props) {
-  console.log("ChatHead Component");
+  /* console.log("ChatHead Component"); */
 
   const { width } = useWindowsDimensions();
   const { myStyle, setMyStyle } = useContext(styleContext);
@@ -26,7 +26,7 @@ function ChatHead(props) {
       });
     }
   }
-  console.log(`Image: ${props.info}`);
+
   return (
     <button className="chat-head elevated" onClick={() => handleClick()}>
       <img className="avatar" src={imgUrl} alt="avatar" />

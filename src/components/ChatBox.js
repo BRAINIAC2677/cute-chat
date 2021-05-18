@@ -8,7 +8,7 @@ import InboxHeader from "../components/InboxHeader";
 import ChatTexts from "../components/ChatTexts";
 
 function ChatBox() {
-  console.log("ChatBox component");
+  /* console.log("ChatBox component"); */
 
   const { myStyle } = useContext(styleContext);
   const { focused } = myStyle;

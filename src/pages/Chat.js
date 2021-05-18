@@ -11,7 +11,7 @@ import useWindowDimensions from "../custom_hooks/useWindowDimensions";
 import "../styles/Chat.css";
 
 function Chat() {
-  console.log("Chat Component");
+  /* console.log("Chat Component"); */
 
   const { global, setGlobal } = useContext(globalContext);
   const { myStyle, setMyStyle } = useContext(styleContext);
@@ -19,8 +19,8 @@ function Chat() {
   const { width } = useWindowDimensions();
   const { user, chatRooms } = global;
 
-  console.log(`width: ${width}`);
-  console.log(`focused: ${myStyle.focused}`);
+  /*   console.log(`width: ${width}`);
+  console.log(`focused: ${myStyle.focused}`); */
 
   useEffect(() => {
     if (width <= breakPoint) {

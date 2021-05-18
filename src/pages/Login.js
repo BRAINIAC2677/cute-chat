@@ -5,7 +5,7 @@ import uiConfig from "../services/firebaseui";
 import "../styles/Login.css";
 
 function Login() {
-  console.log("Login Component.");
+  /* console.log("Login Component."); */
 
   return (
     <div className="container">

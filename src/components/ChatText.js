@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 function Text(props) {
-  console.log("Text component");
+  /* console.log("Text component"); */
 
   const { global } = useContext(globalContext);
   const { chatRooms, currentRoomId, user } = global;
