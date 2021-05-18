@@ -1,8 +1,9 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
 import { db } from "../services/firebase";
 import { globalContext } from "./globalContext";
 import useRoomIndex from "../custom_hooks/useRoomIndex";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 function ComposeChatText() {
   console.log("ComposeChatText Component");
@@ -21,9 +22,9 @@ function ComposeChatText() {
     const curTime = new Date();
     let newText = {
       id: Date.now(),
-      author: user.displayName,
+      author: user.email,
       body: inpVal,
-      time: curTime.toLocaleString(),
+      time: curTime.toLocaleTimeString(),
     };
 
     let updTexts = chatRooms[currentRoomInd].texts;
@@ -42,13 +43,16 @@ function ComposeChatText() {
   }
 
   return (
-    <div>
-      <TextField
-        label="Write"
+    <div className="compose-text">
+      <input
+        className="pressed"
+        placeholder="Write"
         value={inpVal}
         onChange={(event) => handleChange(event)}
-      ></TextField>
-      <button onClick={handleClick}>Send</button>
+      />
+      <button className="elevated rounded-btn" onClick={handleClick}>
+        <FontAwesomeIcon icon={faPaperPlane} />
+      </button>
     </div>
   );
 }

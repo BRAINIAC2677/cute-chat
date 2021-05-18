@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { globalContext } from "../components/globalContext";
 
 function useRoomIndex(id) {
-  const { global, setGlobal } = useContext(globalContext);
+  const { global } = useContext(globalContext);
   const { chatRooms } = global;
   if (id === null) {
     return null;

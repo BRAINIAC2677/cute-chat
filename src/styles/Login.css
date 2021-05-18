@@ -1,0 +1,31 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(224, 88%, 93%);
+}
+
+.login-container {
+  --v1: 8px;
+  --h1: 8px;
+  --v2: -8px;
+  --h2: -8px;
+  --br: 8px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  box-shadow: var(--h1) var(--v1) var(--br) hsl(141, 43%, 78%),
+    var(--h2) var(--v2) var(--br) hsl(141, 43%, 100%);
+  border-radius: 10px;
+}
+
+p.item {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}

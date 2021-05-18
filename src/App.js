@@ -4,6 +4,7 @@ import { globalContext } from "./components/globalContext";
 import { fire, db } from "./services/firebase";
 import Login from "./pages/Login";
 import Chat from "./pages/Chat";
+import { StyleContextProvider } from "./components/styleContext";
 
 function App() {
   console.log("App component");
@@ -55,7 +56,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <StyleContextProvider>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -63,7 +64,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </StyleContextProvider>
   );
 }
 
