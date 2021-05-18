@@ -28,7 +28,7 @@ function ComposeChatText() {
     };
 
     let updTexts = chatRooms[currentRoomInd].texts;
-    if (updTexts.length >= 5) {
+    if (updTexts.length >= 20) {
       updTexts.shift();
     }
     updTexts.push(newText);
