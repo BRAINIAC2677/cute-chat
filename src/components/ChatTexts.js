@@ -13,7 +13,7 @@ function ChatTexts() {
     scrollRef.current.scrollTop =
       scrollRef.current.scrollHeight - scrollRef.current.clientHeight;
   });
-  console.log(`height: ${h}`);
+
   return (
     <div className="chat-texts" ref={scrollRef}>
       {chatRooms[currentRoomInd].texts.map((text) => {
