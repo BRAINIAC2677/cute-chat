@@ -29,21 +29,18 @@ function App() {
             return { ...prevGlobal, user };
           });
 
-      if (
-        user &&
-        fire.auth().currentUser.metadata.creationTime ===
-          fire.auth().currentUser.metadata.lastSignInTime
-      ) {
+      if (user) {
         let newUser = {
+          active: true,
           name: user.displayName,
           email: user.email,
           imgUrl: user.photoURL,
         };
+
         db.collection("cute_users")
-          .add(newUser)
-          .then((docRef) =>
-            console.log(`${docRef.id} and new user successfully in.`)
-          )
+          .doc(fire.auth().currentUser.uid)
+          .set(newUser)
+          .then(() => console.log(` new user successfully in.`))
           .catch((error) =>
             console.log(`${error} in writing new user in database.`)
           );

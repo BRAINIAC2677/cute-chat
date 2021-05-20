@@ -34,8 +34,15 @@ function Chat() {
     }
   }, [width]);
 
+  /* listening to the chatrooms and for each room another nested listener is added for the other user of the room. And if it is the last room then the chatRooms is updated in the global context.
+
+  if there is no chatRooms for the user setGlobal is called with empty array. 
+  
+  chatRooms = {room_id, members, texts[], name, imgUrl, active,}*/
+
   useEffect(() => {
-    const dbListener = db
+    let dbUserListener = [];
+    const dbRoomListener = db
       .collection("cute_rooms")
       .where("members", "array-contains", user.email)
       .onSnapshot((snapShot) => {
@@ -44,13 +51,46 @@ function Chat() {
           newChatRooms.push({ room_id: doc.id, ...doc.data() });
         });
 
-        setGlobal((prevGlobal) => {
-          return { ...prevGlobal, chatRooms: newChatRooms };
-        });
+        if (newChatRooms.length === 0) {
+          setGlobal((prevGlobal) => {
+            return { ...prevGlobal, chatRooms: newChatRooms };
+          });
+        }
+
+        for (let index in newChatRooms) {
+          let otherEndEmail =
+            newChatRooms[index].members[0] === user.email
+              ? newChatRooms[index].members[1]
+              : newChatRooms[index].members[0];
+          dbUserListener.push(
+            db
+              .collection("cute_users")
+              .where("email", "==", otherEndEmail)
+              .onSnapshot((snapShot) => {
+                /* console.log(`snapShot: ${JSON.stringify(snapShot)}`); */
+                snapShot.forEach((user) => {
+                  console.log(`\n\n\nuser ${JSON.stringify(user)}`);
+                  newChatRooms[index] = {
+                    ...user.data(),
+                    ...newChatRooms[index],
+                  };
+
+                  if (index == newChatRooms.length - 1) {
+                    setGlobal((prevGlobal) => {
+                      return { ...prevGlobal, chatRooms: newChatRooms };
+                    });
+                  }
+                });
+              })
+          );
+        }
       });
 
     return function cleanup() {
-      dbListener();
+      dbRoomListener();
+      for (let i of dbUserListener) {
+        i();
+      }
     };
   }, []);
 

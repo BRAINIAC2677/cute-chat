@@ -135,6 +135,7 @@ input:focus {
 
 .chat-text-delete {
   border: 0;
+  color: red;
   cursor: pointer;
 }
 
@@ -332,7 +333,7 @@ input:focus {
   }
 
   .chat-text-body {
-    --mx-width: 90px;
+    --mx-width: 120px;
   }
 
   .search {
@@ -362,5 +363,17 @@ input:focus {
 
   .chat-box {
     grid-template-rows: 30px 340px 45px;
+  }
+
+  .compose-text {
+    border: red solid 2px;
+  }
+
+  .inbox-header {
+    border: black solid 2px;
+  }
+
+  .chat-texts {
+    border: green solid 2px;
   }
 }

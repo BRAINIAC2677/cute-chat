@@ -44,7 +44,7 @@ function Search() {
       <input
         className="pressed"
         value={inpVal}
-        placeholder="ex. Asif Azad"
+        placeholder="Search"
         onChange={(event) => handleChange(event)}
       />
       <button className="rounded-btn elevated" onClick={handleSearch}>

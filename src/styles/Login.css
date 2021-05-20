@@ -20,5 +20,6 @@ p.title {
 }
 
 p.dev {
+  font-size: var(--font-size-3);
   margin-top: var(--spacing-2);
 }

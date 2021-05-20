@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { fire } from "../services/firebase";
 import { globalContext } from "./globalContext";
 import Search from "./Search";
 import Logout from "./Logout";

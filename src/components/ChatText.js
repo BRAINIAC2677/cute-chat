@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { db } from "../services/firebase";
+import { db, fire } from "../services/firebase";
 import { globalContext } from "./globalContext";
 import useRoomIndex from "../custom_hooks/useRoomIndex";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,9 +13,10 @@ function Text(props) {
   const currentRoomInd = useRoomIndex(currentRoomId);
   const { id, body, time, author } = props.info;
 
-  const { members, imgUrls } = chatRooms[currentRoomInd];
-  const authorIndex = members.findIndex((member) => member === author);
-  const imgUrl = imgUrls[authorIndex];
+  const imgUrl =
+    author === fire.auth().currentUser.email
+      ? fire.auth().currentUser.photoURL
+      : chatRooms[currentRoomInd].imgUrl;
 
   function handleDelete() {
     let updTexts = chatRooms[currentRoomInd].texts.filter((text) => {

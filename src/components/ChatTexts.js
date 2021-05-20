@@ -8,6 +8,7 @@ function ChatTexts() {
   const { chatRooms, currentRoomId } = global;
   const currentRoomInd = useRoomIndex(currentRoomId);
   const scrollRef = useRef(null);
+  let height;
 
   useEffect(() => {
     scrollRef.current.scrollTop =

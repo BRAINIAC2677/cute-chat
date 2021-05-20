@@ -26,10 +26,9 @@ function SearchResult(props) {
       return room.members.includes(email);
     });
     if (currentRoomInd === -1) {
-      const room_name = [user.displayName, name],
-        members = [user.email, email],
-        imgUrls = [user.photoURL, imgUrl];
-      const newRoom = { room_name, members, imgUrls, texts: [] };
+      const members = [user.email, email];
+
+      const newRoom = { members, texts: [] };
       const docRef = await db.collection("cute_rooms").add(newRoom);
 
       /* console.log(`${docRef.id} successfully room added.`); */

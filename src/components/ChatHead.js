@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { globalContext } from "./globalContext";
 import { styleContext } from "./styleContext";
 import useWindowsDimensions from "../custom_hooks/useWindowDimensions";
+import { db } from "../services/firebase";
 
 function ChatHead(props) {
   /* console.log("ChatHead Component"); */
@@ -9,11 +10,9 @@ function ChatHead(props) {
   const { width } = useWindowsDimensions();
   const { myStyle, setMyStyle } = useContext(styleContext);
   const { breakPoint } = myStyle;
-  const { global, setGlobal } = useContext(globalContext);
-  const { user } = global;
-  const { room_name, room_id, imgUrls } = props.info;
-  let name = room_name[0] === user.displayName ? room_name[1] : room_name[0];
-  let imgUrl = imgUrls[0] === user.photoURL ? imgUrls[1] : imgUrls[0];
+  const { setGlobal } = useContext(globalContext);
+  const { name, room_id, imgUrl, active } = props.info;
+  const activeStatus = active ? "Active" : "Inactive";
 
   function handleClick() {
     setGlobal((prevGlobal) => {
@@ -28,9 +27,18 @@ function ChatHead(props) {
   }
 
   return (
-    <button className="chat-head elevated" onClick={() => handleClick()}>
+    <button
+      style={
+        active
+          ? { backgroundColor: "rgba(0, 255, 0, 0.3)" }
+          : { backgroundColor: "rgba(255, 0, 0, 0.3)" }
+      }
+      className="chat-head elevated"
+      onClick={() => handleClick()}
+    >
       <img className="avatar" src={imgUrl} alt="avatar" />
       <p>{name}</p>
+      <p style={{ fontSize: "var(--font-size-3)" }}>{activeStatus}</p>
     </button>
   );
 }

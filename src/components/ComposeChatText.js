@@ -28,7 +28,7 @@ function ComposeChatText() {
     };
 
     let updTexts = chatRooms[currentRoomInd].texts;
-    if (updTexts.length >= 20) {
+    if (updTexts.length >= 50) {
       updTexts.shift();
     }
     updTexts.push(newText);
@@ -46,7 +46,7 @@ function ComposeChatText() {
     <div className="compose-text">
       <input
         className="pressed"
-        placeholder="You are awesome"
+        placeholder="Write your message"
         value={inpVal}
         onChange={(event) => handleChange(event)}
       />
