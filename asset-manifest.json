@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/cute-chat/static/css/main.f6812d6a.chunk.css",
-    "main.js": "/cute-chat/static/js/main.20ce28aa.chunk.js",
-    "main.js.map": "/cute-chat/static/js/main.20ce28aa.chunk.js.map",
+    "main.js": "/cute-chat/static/js/main.b72b9d61.chunk.js",
+    "main.js.map": "/cute-chat/static/js/main.b72b9d61.chunk.js.map",
     "runtime-main.js": "/cute-chat/static/js/runtime-main.551bb6b6.js",
     "runtime-main.js.map": "/cute-chat/static/js/runtime-main.551bb6b6.js.map",
     "static/js/2.a7e4d21d.chunk.js": "/cute-chat/static/js/2.a7e4d21d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.551bb6b6.js",
     "static/js/2.a7e4d21d.chunk.js",
     "static/css/main.f6812d6a.chunk.css",
-    "static/js/main.20ce28aa.chunk.js"
+    "static/js/main.b72b9d61.chunk.js"
   ]
 }
