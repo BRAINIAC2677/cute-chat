@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/cute-chat/static/css/main.0631fd0e.chunk.css",
-    "main.js": "/cute-chat/static/js/main.a0b4cceb.chunk.js",
-    "main.js.map": "/cute-chat/static/js/main.a0b4cceb.chunk.js.map",
+    "main.css": "/cute-chat/static/css/main.a77c024e.chunk.css",
+    "main.js": "/cute-chat/static/js/main.4d44c71c.chunk.js",
+    "main.js.map": "/cute-chat/static/js/main.4d44c71c.chunk.js.map",
     "runtime-main.js": "/cute-chat/static/js/runtime-main.551bb6b6.js",
     "runtime-main.js.map": "/cute-chat/static/js/runtime-main.551bb6b6.js.map",
-    "static/js/2.c3196fe6.chunk.js": "/cute-chat/static/js/2.c3196fe6.chunk.js",
-    "static/js/2.c3196fe6.chunk.js.map": "/cute-chat/static/js/2.c3196fe6.chunk.js.map",
+    "static/js/2.a7e4d21d.chunk.js": "/cute-chat/static/js/2.a7e4d21d.chunk.js",
+    "static/js/2.a7e4d21d.chunk.js.map": "/cute-chat/static/js/2.a7e4d21d.chunk.js.map",
     "index.html": "/cute-chat/index.html",
-    "static/css/main.0631fd0e.chunk.css.map": "/cute-chat/static/css/main.0631fd0e.chunk.css.map",
-    "static/js/2.c3196fe6.chunk.js.LICENSE.txt": "/cute-chat/static/js/2.c3196fe6.chunk.js.LICENSE.txt"
+    "static/css/main.a77c024e.chunk.css.map": "/cute-chat/static/css/main.a77c024e.chunk.css.map",
+    "static/js/2.a7e4d21d.chunk.js.LICENSE.txt": "/cute-chat/static/js/2.a7e4d21d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.551bb6b6.js",
-    "static/js/2.c3196fe6.chunk.js",
-    "static/css/main.0631fd0e.chunk.css",
-    "static/js/main.a0b4cceb.chunk.js"
+    "static/js/2.a7e4d21d.chunk.js",
+    "static/css/main.a77c024e.chunk.css",
+    "static/js/main.4d44c71c.chunk.js"
   ]
 }
