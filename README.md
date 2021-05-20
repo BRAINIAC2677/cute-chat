@@ -18,7 +18,10 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#database-structure">Database Structure</a></li>
     <li><a href="#features">Features</a></li>
+    <li><a href="#future-possible-updates">Future Possible Updates</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -35,9 +38,15 @@
 
 ## About The Project
 
-![PaFin ScreenShot](Assets/about.png)
-
 cute-chat is a realtime chatting app using reactJS and Google's firebase.
+
+## Demo:
+
+![](Assets/cute-chat-demo.gif)
+
+### Android Version:
+
+![](Assets/android.jpg)
 
 ### Built With
 
@@ -48,15 +57,23 @@ cute-chat is a realtime chatting app using reactJS and Google's firebase.
 - CSS
 - JSS
 
+## Database Structure:
+
+![](Assets/database.png)
+
 ## Features:
 
-1. Visualize BFS and DFS alogorithms.
-2. Find the shortest path using BFS considering all edgeweight same.
-3. Generate random mazes and recursion division maze.
-4. Press **_d_** for smooth draw mode on and **_Shift + d_** that is **_D_** for smooth draw mode off.
-5. Control speed and theme.
+1. One to one chat.
+2. See the list of acquitances.
+3. See the active status of the acquitances.
+4. Searching by the exact username.
+5. Sign in using google, facebook and any other email account.
+6. Neomorphic design.
 
-![](https://github.com/BRAINIAC2677/PaFin/blob/main/Assets/demo.gif)
+## Future Possible Updates:
+
+1.  Adding the group facility.
+2.  Changing the user profile information.
 
 <!-- GETTING STARTED -->
 
