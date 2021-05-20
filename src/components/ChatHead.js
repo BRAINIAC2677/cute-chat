@@ -30,13 +30,28 @@ function ChatHead(props) {
     <button
       style={
         active
-          ? { backgroundColor: "rgba(0, 255, 0, 0.3)" }
-          : { backgroundColor: "rgba(255, 0, 0, 0.3)" }
+          ? {
+              backgroundColor: "rgba(0, 255, 0, 0.1)",
+              border: "var(--active-col) solid 3px",
+            }
+          : {
+              backgroundColor: "rgba(255,0, 0, 0.1)",
+              border: "var(--inactive-col) solid 3px",
+            }
       }
       className="chat-head elevated"
       onClick={() => handleClick()}
     >
-      <img className="avatar" src={imgUrl} alt="avatar" />
+      <img
+        style={
+          active
+            ? { border: "var(--active-col) solid 5px" }
+            : { border: "var(--inactive-col) solid 5px" }
+        }
+        className="avatar"
+        src={imgUrl}
+        alt="avatar"
+      />
       <p>{name}</p>
       <p style={{ fontSize: "var(--font-size-3)" }}>{activeStatus}</p>
     </button>
