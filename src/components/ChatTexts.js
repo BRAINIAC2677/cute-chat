@@ -8,17 +8,14 @@ function ChatTexts() {
   const { chatRooms, currentRoomId } = global;
   const currentRoomInd = useRoomIndex(currentRoomId);
   const scrollRef = useRef(null);
-  let height;
 
   useEffect(() => {
     scrollRef.current.scrollTop =
       scrollRef.current.scrollHeight - scrollRef.current.clientHeight;
   });
-  height = window.getComputedStyle(scrollRef.current).height;
-  console.log(`height: ${height}`);
+  console.log(`height: ${h}`);
   return (
     <div className="chat-texts" ref={scrollRef}>
-      <h1>{height}</h1>
       {chatRooms[currentRoomInd].texts.map((text) => {
         return <ChatText key={text.id} info={text} />;
       })}
