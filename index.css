@@ -23,6 +23,8 @@
   --dark-shadow: hsl(225, 90%, 78%);
   --accent-col-1: black;
   --accent-col-2: #00cecb;
+  --active-col: rgb(0, 255, 0);
+  --inactive-col: rgb(255, 0, 0);
 
   --spacing-1: 1.5rem;
   --spacing-2: 1rem;
