@@ -69,7 +69,6 @@ function Chat() {
               .onSnapshot((snapShot) => {
                 /* console.log(`snapShot: ${JSON.stringify(snapShot)}`); */
                 snapShot.forEach((user) => {
-                  console.log(`\n\n\nuser ${JSON.stringify(user)}`);
                   newChatRooms[index] = {
                     ...user.data(),
                     ...newChatRooms[index],

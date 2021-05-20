@@ -363,10 +363,9 @@ input:focus {
 
   .chat-box {
     grid-template-rows: 30px 450px 45px;
-    border: red solid 2px;
   }
 
-  .compose-text {
+  /*   .compose-text {
     border: red solid 2px;
   }
 
@@ -376,5 +375,5 @@ input:focus {
 
   .chat-texts {
     border: green solid 2px;
-  }
+  } */
 }
