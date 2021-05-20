@@ -362,7 +362,7 @@ input:focus {
   }
 
   .chat-box {
-    grid-template-rows: 30px 340px 45px;
+    grid-template-rows: 30px 450px 45px;
   }
 
   .compose-text {
