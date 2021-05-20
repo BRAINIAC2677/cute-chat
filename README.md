@@ -46,7 +46,7 @@ cute-chat is a realtime chatting app using reactJS and Google's firebase.
 
 ### Android Version:
 
-![](Assets/android.jpg)
+<img src="Assets/android.jpg" width="300" height="632"/>
 
 ### Built With
 
