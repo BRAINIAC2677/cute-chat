@@ -144,4 +144,4 @@ Project Link: [https://github.com/BRAINIAC2677/PaFin](https://github.com/BRAINIA
 [license-shield]: https://img.shields.io/github/license/BRAINIAC2677/cute-chat.svg?style=for-the-badge
 [license-url]: https://github.com/BRAINIAC2677/cute-chat/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: www.linkedin.com/in/asif-azad-5420b51a9
+[linkedin-url]: https://www.linkedin.com/in/asif-azad-5420b51a9/
