@@ -1,3 +1,9 @@
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -59,7 +65,7 @@ cute-chat is a realtime chatting app using reactJS and Google's firebase.
 
 ## Database Structure:
 
-![](Assets/database.png)
+<img src="Assets/database.png" width="600" height="400"/>
 
 ## Features:
 
@@ -125,3 +131,17 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Asif Azad - brainiac2677@gmail.com
 
 Project Link: [https://github.com/BRAINIAC2677/PaFin](https://github.com/BRAINIAC2677/PaFin)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[forks-shield]: https://img.shields.io/github/forks/BRAINIAC2677/cute-chat.svg?style=for-the-badge
+[forks-url]: https://github.com/BRAINIAC2677/cute-chat/network/members
+[stars-shield]: https://img.shields.io/github/stars/BRAINIAC2677/cute-chat.svg?style=for-the-badge
+[stars-url]: https://github.com/BRAINIAC2677/cute-chat/stargazers
+[issues-shield]: https://img.shields.io/github/issues/BRAINIAC2677/cute-chat.svg?style=for-the-badge
+[issues-url]: https://github.com/BRAINIAC2677/cute-chat/issues
+[license-shield]: https://img.shields.io/github/license/BRAINIAC2677/cute-chat.svg?style=for-the-badge
+[license-url]: https://github.com/BRAINIAC2677/cute-chat/blob/main/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: www.linkedin.com/in/asif-azad-5420b51a9
