@@ -130,7 +130,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Asif Azad - brainiac2677@gmail.com
 
-Project Link: [https://github.com/BRAINIAC2677/PaFin](https://github.com/BRAINIAC2677/PaFin)
+Project Link: [Here](https://brainiac2677.github.io/cute-chat/#/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
